@@ -9,8 +9,10 @@ const PrevBtn = props => {
   const getPath = (direction) => {
     const currentLocation = window.location.pathname;
     let routeIndex = allRoutes.indexOf(currentLocation);
-    const nextIndex = direction ? --routeIndex : ++routeIndex;
-    debugger
+    let nextIndex = direction ? --routeIndex : ++routeIndex;
+    if(nextIndex === allRoutes.length){
+      nextIndex = 0;
+    }
     return allRoutes[nextIndex]
   }
 

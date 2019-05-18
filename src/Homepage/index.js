@@ -11,12 +11,12 @@ function Homepage() {
     <div className="homePageContent">
       <p className="title homepageTitle">Stars And Stripes Driving School</p>
       <Link to="/page/service">
-        <div class="homepageBtn flexRow">
+        <div className="homepageBtn flexRow">
           <p>SERVICES</p>
         </div>
       </Link>
     </div>
-    <img class="homepageBgImg" src={car} />
+    <img className="homepageBgImg" src={car} />
   </div>);
 }
 
