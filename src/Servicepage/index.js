@@ -1,6 +1,5 @@
 import React from 'react';
 import PriceCard from "./PriceCard";
-import Details from './Details';
 
 import driving_test_prices from "./pricing/driving_test_prices";
 import local_pricing from "./pricing/local_pricing";
@@ -77,7 +76,6 @@ function Servicepage() {
       <img className="starsBanner" src={stars} />
       <p className="title servicepageTitle">Click to schedule your driving test</p>
     </a>
-    <Details />
   </div>);
 }
 

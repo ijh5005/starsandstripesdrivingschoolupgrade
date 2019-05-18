@@ -9,7 +9,7 @@ import './index.css';
 function Homepage() {
   return (<div id="homepage" className="page flexCol">
     <div className="homePageContent">
-      <p className="title homepageTitle">stars and stripes driving school</p>
+      <p className="title homepageTitle">Stars And Stripes Driving School</p>
       <Link to="/page/service">
         <div class="homepageBtn flexRow">
           <p>SERVICES</p>
