@@ -1,0 +1,52 @@
+.prevBtn {
+	z-index: 100;
+	text-decoration: none;
+	border-radius: 2px;
+	background: #fff;
+	color: #000;
+	position: fixed;
+	right: 11em;
+	bottom: 2.4em;
+	height: 3.8em;
+  width: 6.8em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid transparent;
+}
+
+.prevBtn:hover {
+	border: 1px solid #000;
+}
+
+.prevBtn > span {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+/***************************/
+/* media queries */
+/***************************/
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	.prevBtn {
+		bottom: 0;
+		left: 0;
+		width: 50vw;
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+}

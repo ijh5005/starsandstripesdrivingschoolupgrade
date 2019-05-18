@@ -1,0 +1,59 @@
+#homepage {
+  background-color: var(--BLUE_SAPPHIRE);
+  overflow: hidden;
+  position: relative;
+}
+
+.homePageContent {
+  z-index: 2;
+}
+
+.page {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+}
+
+.homepageTitle {
+  font-size: 5em;
+  line-height: 1;
+  text-align: center;
+  color: var(--SPARTAN_CRIMSON);
+  -webkit-text-stroke: 0.005em var(--COSMIC_LATTE);
+  text-shadow: 2px 8px 4px rgb(0, 37, 53);
+  margin: 0;
+  margin-top: 0.5em;
+}
+
+.homepageBtn {
+  height: 6em;
+  width: 14em;
+  margin: 0 auto;
+  background-color: #0d374a;
+  color: var(--SPARTAN_CRIMSON);
+  border-radius: 0.4em;
+}
+
+.homepageBtn p {
+  font-size: 2em;
+  font-weight: bolder;
+  color: var(--SPARTAN_CRIMSON);
+}
+
+.homepageBgImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  opacity: 0.05;
+}
+
+@media only screen and (min-width: 800px) {
+  .homepageTitle {
+    width: 6em;
+    font-size: 8em;
+  }
+  .homepageBtn {
+    width: 36em;
+  }
+}

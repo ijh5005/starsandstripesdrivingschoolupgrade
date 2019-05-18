@@ -1,0 +1,38 @@
+#detailsPage {
+  width: 60vw;
+  margin: 6em auto;
+  margin-top: 0;
+}
+
+.detailsHeading {
+  font-size: 4em;
+  margin: 0;
+  font-weight: 800;
+  color: rgba(3, 4, 32, 1);
+  margin-top: 1em;
+}
+
+/***************************/
+/* media queries */
+/***************************/
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  #detailsPage {
+    display: none;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+}

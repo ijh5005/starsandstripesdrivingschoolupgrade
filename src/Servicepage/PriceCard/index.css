@@ -1,0 +1,26 @@
+.servicepagePriceCard {
+  padding: 2em 0;
+  width: 90vw;
+  background: radial-gradient(circle, rgba(160,36,22,1) 0%, rgba(31,81,103,1) 132%);
+  border-radius: 0.2em;
+  margin-bottom: 1em;
+  max-width: 24em;
+  max-height: 30em;
+  margin: 1em;
+}
+
+.serviceCardDescription {
+  width: 50%;
+  color: var(--COSMIC_LATTE);
+  font-size: 1.2em;
+}
+
+.serviceCardCost {
+  width: 40%;
+}
+
+.serviceCardCost p {
+  color: var(--COSMIC_LATTE);
+  font-weight: 800;
+  font-size: 4em;
+}
