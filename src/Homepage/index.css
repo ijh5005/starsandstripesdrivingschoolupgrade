@@ -1,5 +1,5 @@
 #homepage {
-  background-color: var(--BLUE_SAPPHIRE);
+  background-color: var(--DARK_BLUE);
   overflow: hidden;
   position: relative;
 }
@@ -18,8 +18,8 @@
   font-size: 5em;
   line-height: 1;
   text-align: center;
-  color: var(--SPARTAN_CRIMSON);
-  -webkit-text-stroke: 0.005em var(--COSMIC_LATTE);
+  color: var(--COSMIC_LATTE);
+  -webkit-text-stroke: 0.005em 2px 8px 4px rgb(13, 16, 101);
   text-shadow: 2px 8px 4px rgb(0, 37, 53);
   margin: 0;
   margin-top: 0.5em;
@@ -29,15 +29,15 @@
   height: 6em;
   width: 14em;
   margin: 0 auto;
-  background-color: #0d374a;
-  color: var(--SPARTAN_CRIMSON);
+  background-color: var(--DARK_BLUE);
   border-radius: 0.4em;
+  border: 1px solid var(--COSMIC_LATTE);
 }
 
 .homepageBtn p {
   font-size: 2em;
   font-weight: bolder;
-  color: var(--SPARTAN_CRIMSON);
+  color: var(--COSMIC_LATTE);
 }
 
 .homepageBgImg {
@@ -45,7 +45,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  opacity: 0.05;
+  opacity: 0.5;
 }
 
 @media only screen and (min-width: 800px) {

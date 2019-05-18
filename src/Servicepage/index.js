@@ -28,7 +28,8 @@ function Servicepage() {
       <span className="white">s</span>
     </p>
     <div className="serviceHolder">
-      <div className="sericeLeft">
+    
+      <div>
         <p className="title servicepageMiniTitle">Driving Practice Cost</p>
         <div className="priceContainer">
           {driving_test_prices.map((data, index) => {
@@ -40,6 +41,9 @@ function Servicepage() {
             />)
           })}
         </div>
+      </div>
+
+      <div>
         <p className="title servicepageMiniTitle">Driving Test: Philly Prices</p>
         <div className="priceContainer">
           {local_pricing.map((data, index) => {
@@ -51,6 +55,9 @@ function Servicepage() {
             />)
           })}
         </div>
+      </div>
+
+      <div>
         <p className="title servicepageMiniTitle">Driving Test: Norristown, Media, Huntingdon Valley, Bensalem Prices</p>
         <div className="priceContainer">
           {other_pricing.map((data, index) => {
@@ -63,14 +70,7 @@ function Servicepage() {
           })}
         </div>
       </div>
-      <div className="sericeRight">
-        <img className="pplimgs" src={one} />
-        <img className="pplimgs" src={two} />
-        <img className="pplimgs" src={three} />
-        <img className="pplimgs" src={four} />
-        <img className="pplimgs" src={five} />
-        <img className="pplimgs" src={six} />
-      </div>
+
     </div>
     <a className="aBanner" href="https://www.dot2e.penndot.gov/exam_scheduling/eslogin.jsp#top?20190416185208189=20190416185208189" target="_blank">
       <img className="starsBanner" src={stars} />
