@@ -1,6 +1,7 @@
 import React from 'react';
 
 import car from "./car.jpg";
+import stars from "./imgs/stars.jpg";
 
 import { Link } from "react-router-dom";
 
@@ -17,6 +18,7 @@ function Homepage() {
       </Link>
     </div>
     <img className="homepageBgImg" src={car} />
+    <img className="starsHomeBanner" src={stars} />
   </div>);
 }
 
