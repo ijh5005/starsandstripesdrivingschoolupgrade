@@ -6,6 +6,10 @@
   height: auto;
 }
 
+#servicepage .servicepageTitle {
+  margin: 0;
+}
+
 .servicepageContainer {
   width: 100vw;
 }
@@ -18,11 +22,10 @@
   text-align: center;
   font-weight: 900;
   position: relative;
-  margin: 0;
   overflow: hidden;
   width: 100vw;
-  margin-bottom: 4rem;
   background: rgba(3, 4, 32, 0.8);
+  margin: 0;
 }
 
 .servicepageTitle > span {
@@ -43,10 +46,8 @@
   line-height: 1;
   color: var(--DARK_SLATE_GRAY);
   -webkit-text-stroke: 0.005em var(--COSMIC_LATTE);
-  margin: 0 0 0 1rem;
   align-self: baseline;
   text-align: center;
-  max-width: 90%;
 }
 
 .priceContainer {
@@ -84,6 +85,10 @@
 
 .aBanner p {
   margin: 0;
+}
+
+.pricingSection {
+  margin-bottom: 4em;
 }
 
 @media only screen and (max-width: 800px) {
