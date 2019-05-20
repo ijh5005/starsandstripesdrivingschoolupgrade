@@ -60,6 +60,13 @@
   .largeText {
     font-size: 14em;
   }
+  .detailSideLi {
+    list-style-type: none;
+  }
+  .contentText > ul {
+    border-left: none;
+    margin: 1em 0;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

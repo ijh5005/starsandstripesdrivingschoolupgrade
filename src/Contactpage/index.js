@@ -7,6 +7,9 @@ import ContactForm from "./ContactForm"
 import contactInfo from "./contactInfo";
 
 function Contactpage() {
+
+  window.scrollTo(0, 0);
+
   return (<div id="servicepage" className="flexCol">
     <p className="title servicepageTitle">
       <img className="starsBanner" src={stars} />

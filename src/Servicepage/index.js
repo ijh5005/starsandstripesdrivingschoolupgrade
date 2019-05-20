@@ -10,6 +10,9 @@ import stars from "./imgs/stars.jpg";
 import './index.css';
 
 function Servicepage() {
+
+  window.scrollTo(0, 0);
+  
   return (<div id="servicepage" className="flexCol">
     <p className="title servicepageTitle">
       <img className="starsBanner" src={stars} />

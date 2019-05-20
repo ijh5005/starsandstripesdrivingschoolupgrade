@@ -3,12 +3,15 @@ import stars from "../Servicepage/imgs/stars.jpg";
 import './index.css';
 
 import Testimonial from './Testimonial'
-import avatar4 from './avatar4.png'
-import avatar from './avatar.png'
-import avatar3 from './avatar3.png'
-import avatar5 from './avatar5.png'
+import avatar4 from './ppl1.png'
+import avatar from './ppl2.png'
+import avatar3 from './ppl3.png'
+import avatar5 from './ppl4.png'
 
 function Reviewpage() {
+
+  window.scrollTo(0, 0);
+  
   return (<div id="servicepage" className="flexCol">
     <p className="title servicepageTitle">
       <img className="starsBanner" src={stars} />

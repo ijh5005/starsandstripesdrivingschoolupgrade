@@ -1,3 +1,11 @@
+.review2container {
+  background-color: rgba(3, 4, 32, 1);
+  width: 100vw;
+}
+
+.reviewImg {
+  width: 12em;
+}
 
 .containerTestomny {
   width: 100vw;
@@ -10,7 +18,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 4em 0;
+  padding-bottom: 4em;
 }
 
 .profile {
@@ -80,7 +88,7 @@ footer {
     font-stretch: normal;
     letter-spacing: normal;
     text-align: left;
-    color: #373742;
+    color: #fff;
 }
 
 .review2:before {
@@ -145,6 +153,9 @@ footer {
   .review2 {
     font-size: 1.4em;
     width: 100%;
+  }
+  .reviewImg {
+    width: 100vw;
   }
 }
 
