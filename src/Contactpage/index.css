@@ -1,0 +1,28 @@
+#contactTopSection {
+  flex-wrap: wrap;
+}
+
+.left {
+  width: 50vw;
+  min-width: 30em;
+}
+
+.right {
+  width: 50vw;
+  min-width: 30em;
+  background-color: #222;
+  height: 40em;
+}
+
+@media only screen and (max-width: 800px) {
+  .contactImg {
+    background-size: 100% auto;
+  }
+
+  .right {
+    height: 18em;
+  }
+
+  #contactForm {
+  }
+}
