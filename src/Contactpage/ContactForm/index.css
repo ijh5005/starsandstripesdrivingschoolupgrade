@@ -7,11 +7,16 @@
   align-items: center;
   flex-wrap: wrap;
   padding: 4em 0;
+  margin: 0 auto;
 }
 
 #contactForm > .smallText {
   width: auto;
   margin-right: 1em;
+}
+
+.contactHeading {
+  font-size: 2em;
 }
 
 .form-style-2  {
@@ -76,6 +81,10 @@
   width: 100%;
   height: 3em;
   font-size: 1.2em;
+}
+
+.input-field {
+  font-size: 1em;
 }
 
 @media only screen and (max-width: 768px) {

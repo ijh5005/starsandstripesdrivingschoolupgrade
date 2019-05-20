@@ -2,6 +2,11 @@
   flex-wrap: wrap;
 }
 
+.contactHolder {
+  width: 100vw;
+  overflow: hidden;
+}
+
 .left {
   width: 50vw;
   min-width: 30em;
@@ -14,6 +19,26 @@
   height: 40em;
 }
 
+.header,
+.details {
+  font-size: 3em;
+  font-weight: 100;
+  margin: 0;
+  width: 90vw;
+  text-align: center;
+  color: inherit;
+}
+
+.description {
+  width: 90vw;
+  font-size: 1.2em;
+}
+
+.schedule {
+  font-size: 1.8em;
+  font-weight: 300;
+}
+
 @media only screen and (max-width: 800px) {
   .contactImg {
     background-size: 100% auto;
@@ -24,5 +49,11 @@
   }
 
   #contactForm {
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .description {
+    width: 90%;
   }
 }

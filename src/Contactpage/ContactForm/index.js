@@ -45,8 +45,8 @@ const ContactForm = () => {
 
   }
 
-  return (<div id="contactForm">
-    <p className="smallText">Contact Us</p>
+  return (<div id="contactForm" className="flexCol">
+    <p className="smallText contactHeading">Contact Us</p>
     <div class="form-style-2">
       <form action="" method="post">
         <label for="field1">
