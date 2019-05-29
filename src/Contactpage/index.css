@@ -39,6 +39,14 @@
   font-weight: 300;
 }
 
+.promo {
+  color: rgba(3, 4, 32, 1);
+}
+
+.promo a {
+  color: rgba(3, 4, 32, 1);
+}
+
 @media only screen and (max-width: 800px) {
   .contactImg {
     background-size: 100% auto;
@@ -49,6 +57,11 @@
   }
 
   #contactForm {
+  }
+
+  .promo {
+    margin-bottom: 6em;
+    text-align: center;
   }
 }
 
