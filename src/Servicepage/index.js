@@ -59,6 +59,7 @@ function Servicepage() {
         </div>
       </div>
 
+{/*
       <div className="pricingSection">
         <p className="title servicepageMiniTitle">Driving Test Practice</p>
         <p className="title servicepageMiniTitle">(Norristown, Media, Huntingdon Valley, Bensalem Prices)</p>
@@ -73,6 +74,7 @@ function Servicepage() {
           })}
         </div>
       </div>
+*/}
 
     </div>
     <a className="aBanner" href="https://www.dot2e.penndot.gov/exam_scheduling/eslogin.jsp#top?20190416185208189=20190416185208189" target="_blank">
