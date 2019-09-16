@@ -3,7 +3,7 @@ const other_pricing = [
     cost: "$80",
     text: [
       "Car Rental",
-      "FREE 15 minutes parallel parking practice"
+      //"FREE 15 minutes parallel parking practice"
     ]
   },
   {
@@ -11,7 +11,7 @@ const other_pricing = [
     text: [
       "Car Rental",
       "30 minutes practice",
-      "FREE 15 minutes parallel parking practice"
+      //"FREE 15 minutes parallel parking practice"
     ]
   },
   {
@@ -19,7 +19,7 @@ const other_pricing = [
     text: [
       "Car Rental",
       "1 hour practice",
-      "FREE 15 minutes parallel parking practice"
+      //"FREE 15 minutes parallel parking practice"
     ]
   }
 ];
