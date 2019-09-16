@@ -22,13 +22,13 @@ const local_pricing = [
       //"FREE 15 minutes parallel parking practice"
     ]
   },
-  {
+  /*{
     cost: "$125",
     text: [
       "Car Rental",
       "2 hour practice"
     ]
-  }
+  }*/
 ];
 
 export default local_pricing;
