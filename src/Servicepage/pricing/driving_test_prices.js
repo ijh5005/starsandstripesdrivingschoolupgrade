@@ -1,7 +1,11 @@
 const driving_test_prices = [
   {
-    text: ["2 hr driving lesson"],
-    cost: "$70"
+    text: ["1 hr driving lesson in south philly"],
+    cost: "$35"
+  },
+  {
+    text: ["1 hr driving lesson outside south philly"],
+    cost: "$45"
   }
 ];
 
