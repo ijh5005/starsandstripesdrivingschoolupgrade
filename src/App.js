@@ -12,11 +12,11 @@ import './App.css';
 
 function App() {
 
-  useEffect(() => {
+  /*useEffect(() => {
     setTimeout(() => {
       alert("Super offer! FREE 15 min practice parallel parking before the test")
     }, 2000)
-  }, [])
+  }, [])*/
 
   return (<div id="app">
     <BrowserRouter>
