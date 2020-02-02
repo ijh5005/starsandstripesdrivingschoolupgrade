@@ -24,3 +24,7 @@
   font-weight: 800;
   font-size: 4em;
 }
+
+.highlight {
+  background: radial-gradient(circle, rgb(39, 21, 193) 0%, rgb(0, 0, 0) 132%);
+}

@@ -12,7 +12,7 @@ import './index.css';
 function Servicepage() {
 
   window.scrollTo(0, 0);
-  
+
   return (<div id="servicepage" className="flexCol">
     <p className="title servicepageTitle">
       <img className="starsBanner" src={stars} />
@@ -34,11 +34,12 @@ function Servicepage() {
         <p className="title servicepageMiniTitle">Driving Lessons</p>
         <div className="priceContainer">
           {driving_test_prices.map((data, index) => {
-            const {text, cost} = data;
+            const {text, cost, highlight} = data;
             return (<PriceCard
               key={index}
               text={text}
               cost={cost}
+              highlight={highlight}
             />)
           })}
         </div>
