@@ -9,9 +9,9 @@ const PriceCard = (props) => {
     <div className="serviceCardDescription flexCol">
       {text}
     </div>
-    <div className="serviceCardCost flexRow">
+    {cost && <div className="serviceCardCost flexRow">
       <p>{cost}</p>
-    </div>
+    </div>}
   </div>);
 }
 

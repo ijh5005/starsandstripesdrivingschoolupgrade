@@ -34,6 +34,9 @@ function Servicepage() {
   ] = useState("");
 
   useEffect(() => {
+    const drivingTestPrices = [];
+    const localPricing = [];
+
     axios.get(
       "https://spreadsheets.google.com/feeds/cells/1hZFBx99ekXU_zI9gpm3UT7HqmPPUFmhllPFewkypJvw/1/public/full?alt=json"
     )
@@ -63,24 +66,36 @@ function Servicepage() {
             if (colNumber < 4) {
               // blue cols
               if (colNumber === 1) {
-                obj["text"] = inputValue;
+                drivingTestPrices.push({
+                  text: inputValue
+                })
               } else if (colNumber === 2) {
-                obj["cost"] = `$${inputValue}`
+                drivingTestPrices[drivingTestPrices.length - 1] = {
+                  ...drivingTestPrices[drivingTestPrices.length - 1],
+                  cost: `$${inputValue}`
+                }
               } else {
-                obj["highlight"] = inputValue === "yes";
-                drivingTestPrices.push(obj);
-                obj = {};
+                drivingTestPrices[drivingTestPrices.length - 1] = {
+                  ...drivingTestPrices[drivingTestPrices.length - 1],
+                  highlight: inputValue === "yes"
+                }
               }
             } else {
               // green cols
               if (colNumber === 4) {
-                obj["text"] = inputValue;
+                localPricing.push({
+                  text: inputValue
+                })
               } else if (colNumber === 5) {
-                obj["cost"] = `$${inputValue}`
+                localPricing[localPricing.length - 1] = {
+                  ...localPricing[localPricing.length - 1],
+                  cost: `$${inputValue}`
+                }
               } else {
-                obj["highlight"] = inputValue === "yes";
-                localPricing.push(obj);
-                obj = {};
+                localPricing[localPricing.length - 1] = {
+                  ...localPricing[localPricing.length - 1],
+                  highlight: inputValue === "yes"
+                }
               }
             }
           }
@@ -90,10 +105,6 @@ function Servicepage() {
         setLocalPricingList(localPricing);
       })
   }, []);
-
-  const drivingTestPrices = [];
-  const localPricing = [];
-  let obj = {};
 
   window.scrollTo(0, 0);
 
@@ -133,11 +144,12 @@ function Servicepage() {
         <p className="title servicepageMiniTitle">{sectionTwoTitle}</p>
         <div className="priceContainer">
           {localPricingList.map((data, index) => {
-            const { text, cost } = data;
+            const { text, cost, highlight } = data;
             return (<PriceCard
               key={index}
               text={text}
               cost={cost}
+              highlight={highlight}
             />)
           })}
         </div>
