@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PriceCard from "./PriceCard";
 import ImgSlider from "./ImgSlider";
 
@@ -7,9 +7,93 @@ import local_pricing from "./pricing/local_pricing";
 import other_pricing from "./pricing/other_pricing";
 import stars from "./imgs/stars.jpg";
 
+import axios from "axios";
+
 import './index.css';
 
 function Servicepage() {
+
+  const [
+    drivingTestPriceList,
+    setDrivingTestPriceList
+  ] = useState([]);
+
+  const [
+    localPricingList,
+    setLocalPricingList
+  ] = useState([]);
+
+  const [
+    sectionOneTitle,
+    setSectionOneTitle
+  ] = useState("");
+
+  const [
+    sectionTwoTitle,
+    setSectionTwoTitle
+  ] = useState("");
+
+  useEffect(() => {
+    axios.get(
+      "https://spreadsheets.google.com/feeds/cells/1hZFBx99ekXU_zI9gpm3UT7HqmPPUFmhllPFewkypJvw/1/public/full?alt=json"
+    )
+      .then(data => {
+        const {
+          entry
+        } = data["data"]["feed"];
+  
+        entry.forEach(element => {
+          const {
+            gs$cell
+          } = element;
+          const {
+            row, col, inputValue
+          } = gs$cell;
+  
+          const rowNumber = parseInt(row);
+          const colNumber = parseInt(col);
+          if(rowNumber === 1){
+            if(colNumber === 1){
+              setSectionOneTitle(inputValue);
+            } else if(colNumber === 4){
+              setSectionTwoTitle(inputValue);
+            }
+          }
+          if (rowNumber > 2) {
+            if (colNumber < 4) {
+              // blue cols
+              if (colNumber === 1) {
+                obj["text"] = inputValue;
+              } else if (colNumber === 2) {
+                obj["cost"] = `$${inputValue}`
+              } else {
+                obj["highlight"] = inputValue === "yes";
+                drivingTestPrices.push(obj);
+                obj = {};
+              }
+            } else {
+              // green cols
+              if (colNumber === 4) {
+                obj["text"] = inputValue;
+              } else if (colNumber === 5) {
+                obj["cost"] = `$${inputValue}`
+              } else {
+                obj["highlight"] = inputValue === "yes";
+                localPricing.push(obj);
+                obj = {};
+              }
+            }
+          }
+        });
+  
+        setDrivingTestPriceList(drivingTestPrices);
+        setLocalPricingList(localPricing);
+      })
+  }, []);
+
+  const drivingTestPrices = [];
+  const localPricing = [];
+  let obj = {};
 
   window.scrollTo(0, 0);
 
@@ -31,10 +115,10 @@ function Servicepage() {
     <div className="serviceHolder">
 
       <div className="pricingSection">
-        <p className="title servicepageMiniTitle">Driving Lessons</p>
+        <p className="title servicepageMiniTitle">{sectionOneTitle}</p>
         <div className="priceContainer">
-          {driving_test_prices.map((data, index) => {
-            const {text, cost, highlight} = data;
+          {drivingTestPriceList.map((data, index) => {
+            const { text, cost, highlight } = data;
             return (<PriceCard
               key={index}
               text={text}
@@ -46,11 +130,10 @@ function Servicepage() {
       </div>
 
       <div className="pricingSection">
-        <p className="title servicepageMiniTitle">Driving Test Practice</p>
-        <p className="title servicepageMiniTitle">(Philly)</p>
+        <p className="title servicepageMiniTitle">{sectionTwoTitle}</p>
         <div className="priceContainer">
-          {local_pricing.map((data, index) => {
-            const {text, cost} = data;
+          {localPricingList.map((data, index) => {
+            const { text, cost } = data;
             return (<PriceCard
               key={index}
               text={text}
@@ -59,23 +142,6 @@ function Servicepage() {
           })}
         </div>
       </div>
-
-{/*
-      <div className="pricingSection">
-        <p className="title servicepageMiniTitle">Driving Test Practice</p>
-        <p className="title servicepageMiniTitle">(Norristown, Media, Huntingdon Valley, Bensalem Prices)</p>
-        <div className="priceContainer">
-          {other_pricing.map((data, index) => {
-            const {text, cost} = data;
-            return (<PriceCard
-              key={index}
-              text={text}
-              cost={cost}
-            />)
-          })}
-        </div>
-      </div>
-*/}
 
     </div>
     <a className="aBanner" href="https://www.dot2e.penndot.gov/exam_scheduling/eslogin.jsp#top?20190416185208189=20190416185208189" target="_blank">
