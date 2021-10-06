@@ -51,23 +51,29 @@ function Servicepage() {
         const usedSectionTwoContent = [];
 
         info.map(d => {
-          debugger
+            debugger
             const text = d[0];
             const cost = d[1];
             const highlight = d[2];
-            usedSectionOneContent.push({
+            if(text && text.trim().length){
+              usedSectionOneContent.push({
                 text,
                 cost,
                 highlight: highlight === "yes"
-            })
+              })
+            }
+            
             const text2 = d[3];
             const cost2 = d[4];
             const highlight2 = d[5];
-            usedSectionTwoContent.push({
+            if(text2 && text2.trim().length){
+              usedSectionTwoContent.push({
                 text: text2,
                 cost: cost2,
                 highlight: highlight2 === "yes"
-            })
+              })
+            }
+
         });
 
         setDrivingTestPriceList(usedSectionOneContent);
