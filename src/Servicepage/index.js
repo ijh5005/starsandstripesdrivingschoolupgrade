@@ -134,10 +134,10 @@ function Servicepage() {
 //               }
 //             }
 //           }
-        });
+//         });
   
-        setDrivingTestPriceList(drivingTestPrices);
-        setLocalPricingList(localPricing);
+//         setDrivingTestPriceList(drivingTestPrices);
+//         setLocalPricingList(localPricing);
       })
   }, []);
 
