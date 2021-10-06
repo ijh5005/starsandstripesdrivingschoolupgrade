@@ -34,113 +34,48 @@ function Servicepage() {
   ] = useState("");
 
   useEffect(() => {
-    const drivingTestPrices = [];
-    const localPricing = [];
-
-    axios.get(
-      "https://sheets.googleapis.com/v4/spreadsheets/1hZFBx99ekXU_zI9gpm3UT7HqmPPUFmhllPFewkypJvw/values/Sheet1?alt=json&key=AIzaSyAhMBo6hWX6SC_wi1-6Jn3K-_-26nVgE1E"
-      //"https://spreadsheets.google.com/feeds/cells/1hZFBx99ekXU_zI9gpm3UT7HqmPPUFmhllPFewkypJvw/1/public/full?alt=json"
-    )
-      .then(data => {
-        debugger
-        const { values } = data.data;
-
-        setSectionOneTitle(values[0]);
-        setSectionTwoTitle(values[3]);
-
-        const info = values;
-        info.shift()
-        info.shift()
-
-        usedSectionOneContent = [];
-        usedSectionTwoContent = [];
-
-        info.map(d => {
-            const text = d[0];
-            const cost = d[1];
-            const highlight = d[2];
-            usedSectionOneContent.push({
-                text,
-                cost,
-                highlight
-            })
-            const text2 = d[3];
-            const cost2 = d[4];
-            const highlight2 = d[5];
-            usedSectionTwoContent.push({
-                text: text2,
-                cost: cost2,
-                highlight: highlight2
-            })
-        });
-
-        setDrivingTestPriceList(usedSectionOneContent);
-        setLocalPricingList(usedSectionTwoContent);
-    });
-//         const {
-//           entry
-//         } = data["data"]["feed"];
-  
-//         entry.forEach(element => {
-//           const {
-//             gs$cell
-//           } = element;
-//           const {
-//             row, col, inputValue
-//           } = gs$cell;
-  
-//           const rowNumber = parseInt(row);
-//           const colNumber = parseInt(col);
-//           if(rowNumber === 1){
-//             if(colNumber === 1){
-//               setSectionOneTitle(inputValue);
-//             } else if(colNumber === 4){
-//               setSectionTwoTitle(inputValue);
-//             }
-//           }
-//           if (rowNumber > 2) {
-//             if (colNumber < 4) {
-//               // blue cols
-//               if (colNumber === 1) {
-//                 drivingTestPrices.push({
-//                   text: inputValue
-//                 })
-//               } else if (colNumber === 2) {
-//                 drivingTestPrices[drivingTestPrices.length - 1] = {
-//                   ...drivingTestPrices[drivingTestPrices.length - 1],
-//                   cost: `$${inputValue}`
-//                 }
-//               } else {
-//                 drivingTestPrices[drivingTestPrices.length - 1] = {
-//                   ...drivingTestPrices[drivingTestPrices.length - 1],
-//                   highlight: inputValue === "yes"
-//                 }
-//               }
-//             } else {
-//               // green cols
-//               if (colNumber === 4) {
-//                 localPricing.push({
-//                   text: inputValue
-//                 })
-//               } else if (colNumber === 5) {
-//                 localPricing[localPricing.length - 1] = {
-//                   ...localPricing[localPricing.length - 1],
-//                   cost: `$${inputValue}`
-//                 }
-//               } else {
-//                 localPricing[localPricing.length - 1] = {
-//                   ...localPricing[localPricing.length - 1],
-//                   highlight: inputValue === "yes"
-//                 }
-//               }
-//             }
-//           }
-//         });
-  
-//         setDrivingTestPriceList(drivingTestPrices);
-//         setLocalPricingList(localPricing);
-      //})
   }, []);
+//     axios.get(
+//       "https://sheets.googleapis.com/v4/spreadsheets/1hZFBx99ekXU_zI9gpm3UT7HqmPPUFmhllPFewkypJvw/values/Sheet1?alt=json&key=AIzaSyAhMBo6hWX6SC_wi1-6Jn3K-_-26nVgE1E"
+//       //"https://spreadsheets.google.com/feeds/cells/1hZFBx99ekXU_zI9gpm3UT7HqmPPUFmhllPFewkypJvw/1/public/full?alt=json"
+//     )
+//       .then(data => {
+//         debugger
+//         const { values } = data.data;
+
+//         setSectionOneTitle(values[0]);
+//         setSectionTwoTitle(values[3]);
+
+//         const info = values;
+//         info.shift()
+//         info.shift()
+
+//         usedSectionOneContent = [];
+//         usedSectionTwoContent = [];
+
+//         info.map(d => {
+//             const text = d[0];
+//             const cost = d[1];
+//             const highlight = d[2];
+//             usedSectionOneContent.push({
+//                 text,
+//                 cost,
+//                 highlight
+//             })
+//             const text2 = d[3];
+//             const cost2 = d[4];
+//             const highlight2 = d[5];
+//             usedSectionTwoContent.push({
+//                 text: text2,
+//                 cost: cost2,
+//                 highlight: highlight2
+//             })
+//         });
+
+//         setDrivingTestPriceList(usedSectionOneContent);
+//         setLocalPricingList(usedSectionTwoContent);
+//     });
+//   }, []);
 
   window.scrollTo(0, 0);
 
