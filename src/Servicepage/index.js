@@ -52,14 +52,14 @@ function Servicepage() {
         info.shift()
         info.shift()
 
-        sectionOneContent = [];
-        sectionTwoContent = [];
+        usedSectionOneContent = [];
+        usedSectionTwoContent = [];
 
         info.map(d => {
             const text = d[0];
             const cost = d[1];
             const highlight = d[2];
-            sectionOneContent.push({
+            usedSectionOneContent.push({
                 text,
                 cost,
                 highlight
@@ -67,15 +67,16 @@ function Servicepage() {
             const text2 = d[3];
             const cost2 = d[4];
             const highlight2 = d[5];
-            sectionTwoContent.push({
+            usedSectionTwoContent.push({
                 text: text2,
                 cost: cost2,
                 highlight: highlight2
             })
         });
 
-        setDrivingTestPriceList(drivingTestPrices);
-        setLocalPricingList(localPricing);
+        setDrivingTestPriceList(usedSectionOneContent);
+        setLocalPricingList(usedSectionTwoContent);
+    });
 //         const {
 //           entry
 //         } = data["data"]["feed"];
@@ -138,7 +139,7 @@ function Servicepage() {
   
 //         setDrivingTestPriceList(drivingTestPrices);
 //         setLocalPricingList(localPricing);
-      })
+      //})
   }, []);
 
   window.scrollTo(0, 0);
