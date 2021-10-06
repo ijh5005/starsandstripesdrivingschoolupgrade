@@ -43,7 +43,7 @@ function Servicepage() {
     )
       .then(data => {
         debugger
-        const { values } = data;
+        const { values } = data.data;
 
         setSectionOneTitle(values[0]);
         setSectionTwoTitle(values[3]);
