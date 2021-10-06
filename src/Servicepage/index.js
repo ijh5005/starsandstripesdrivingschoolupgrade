@@ -58,7 +58,7 @@ function Servicepage() {
             usedSectionOneContent.push({
                 text,
                 cost,
-                highlight
+                highlight: highlight === "yes"
             })
             const text2 = d[3];
             const cost2 = d[4];
@@ -66,7 +66,7 @@ function Servicepage() {
             usedSectionTwoContent.push({
                 text: text2,
                 cost: cost2,
-                highlight: highlight2
+                highlight: highlight2 === "yes"
             })
         });
 
