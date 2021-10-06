@@ -51,7 +51,6 @@ function Servicepage() {
         const usedSectionTwoContent = [];
 
         info.map(d => {
-            debugger
             const text = d[0];
             const cost = d[1];
             const highlight = d[2];
