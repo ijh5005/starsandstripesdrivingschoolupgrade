@@ -34,48 +34,46 @@ function Servicepage() {
   ] = useState("");
 
   useEffect(() => {
+    axios.get(
+      "https://sheets.googleapis.com/v4/spreadsheets/1hZFBx99ekXU_zI9gpm3UT7HqmPPUFmhllPFewkypJvw/values/Sheet1?alt=json&key=AIzaSyAhMBo6hWX6SC_wi1-6Jn3K-_-26nVgE1E"
+    )
+      .then(data => {
+        const { values } = data.data;
+
+        setSectionOneTitle(values[0][0]);
+        setSectionTwoTitle(values[0][3]);
+
+        const info = values;
+        info.shift()
+        info.shift()
+
+        const usedSectionOneContent = [];
+        const usedSectionTwoContent = [];
+
+        info.map(d => {
+          debugger
+            const text = d[0];
+            const cost = d[1];
+            const highlight = d[2];
+            usedSectionOneContent.push({
+                text,
+                cost,
+                highlight
+            })
+            const text2 = d[3];
+            const cost2 = d[4];
+            const highlight2 = d[5];
+            usedSectionTwoContent.push({
+                text: text2,
+                cost: cost2,
+                highlight: highlight2
+            })
+        });
+
+        setDrivingTestPriceList(usedSectionOneContent);
+        setLocalPricingList(usedSectionTwoContent);
+    });
   }, []);
-//     axios.get(
-//       "https://sheets.googleapis.com/v4/spreadsheets/1hZFBx99ekXU_zI9gpm3UT7HqmPPUFmhllPFewkypJvw/values/Sheet1?alt=json&key=AIzaSyAhMBo6hWX6SC_wi1-6Jn3K-_-26nVgE1E"
-//       //"https://spreadsheets.google.com/feeds/cells/1hZFBx99ekXU_zI9gpm3UT7HqmPPUFmhllPFewkypJvw/1/public/full?alt=json"
-//     )
-//       .then(data => {
-//         debugger
-//         const { values } = data.data;
-
-//         setSectionOneTitle(values[0]);
-//         setSectionTwoTitle(values[3]);
-
-//         const info = values;
-//         info.shift()
-//         info.shift()
-
-//         usedSectionOneContent = [];
-//         usedSectionTwoContent = [];
-
-//         info.map(d => {
-//             const text = d[0];
-//             const cost = d[1];
-//             const highlight = d[2];
-//             usedSectionOneContent.push({
-//                 text,
-//                 cost,
-//                 highlight
-//             })
-//             const text2 = d[3];
-//             const cost2 = d[4];
-//             const highlight2 = d[5];
-//             usedSectionTwoContent.push({
-//                 text: text2,
-//                 cost: cost2,
-//                 highlight: highlight2
-//             })
-//         });
-
-//         setDrivingTestPriceList(usedSectionOneContent);
-//         setLocalPricingList(usedSectionTwoContent);
-//     });
-//   }, []);
 
   window.scrollTo(0, 0);
 
